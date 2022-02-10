@@ -17,7 +17,9 @@ app.get('/family', async (req,res,next) => {
         </div>
         `;
         }).join('');
-        res.send(html)
+        res.send(`
+        <h1> Robby's Family Page</h1>
+        ${html}`)
     }
 
     catch (ex){
@@ -38,8 +40,8 @@ app.get('/family', async (req,res,next) => {
                     <H1>Robby's Family Page </h1>
                     <div>
                         
-                            <ul> Favorite Hobby: ${family.hobby1}</ul>
-                            <ul> Favorite Team: ${family.favorite_team}</ul>
+                            <ul> ${family.name}'s favorite hobby: ${family.hobby1}</ul>
+                            <ul> ${family.name}'s favorite team: ${family.favorite_team}</ul>
                        
                     </div>
                 </body>
